@@ -35,7 +35,11 @@ class CategoriesAdapter(
     }
 
     inner class ViewHolder(private val binding: ItemCategoryBinding) : BaseViewHolder<CategoryTreeNode>(binding.root) {
+
+        var item:CategoryTreeNode? = null
+
         override fun bindView(item: CategoryTreeNode?) {
+            this.item = item
             binding.textCategoryName.setOnClickListener {
                 item?.let { categoryTreeNode -> onItemClick(categoryTreeNode, binding.textCategoryName) }
             }

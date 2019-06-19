@@ -17,6 +17,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".presentaion.splashscreen.SplashScreenActivity"
+            android:exported="true"
             android:theme="@style/AppTheme.SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,7 @@
 
         <activity
             android:name=".presentaion.AppActivity"
-            android:exported="false"
+            android:exported="true"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden">
             <nav-graph android:value="@navigation/app_nav" />
         </activity>
