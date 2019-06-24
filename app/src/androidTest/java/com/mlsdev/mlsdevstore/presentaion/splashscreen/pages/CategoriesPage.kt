@@ -23,7 +23,7 @@ class CategoriesPage {
         fun selectCategorieByPosition(position: Int){
             var realPosition = position - 1
             Espresso.onView(withId(R.id.rv_categories)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(realPosition, click()))
-            Thread.sleep(2000)
+            Thread.sleep(3000)
         }
 
         fun selectCategorieByName(reference: String, cagorie: String){

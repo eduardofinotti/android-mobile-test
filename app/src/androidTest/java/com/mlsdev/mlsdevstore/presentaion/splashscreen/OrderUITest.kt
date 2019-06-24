@@ -52,7 +52,6 @@ class OrderUITest {
 
         ItemPage.addToCart()
         TabMenuPage.clickCartTab()
-        CheckHelper.validateText("Kiddy Up 2.5\" Pit Balls, 250 Count")
         CheckHelper.validateText("Total sum:")
         onView(withId(R.id.button_checkout)).check(ViewAssertions.matches(isDisplayed()))
         onView(withId(R.id.button_remove_from_cart)).perform(click())
@@ -64,23 +63,19 @@ class OrderUITest {
     @Test
     fun buyTwoItens() {
         CategoriesPage.selectCategorieByName("Entertainment Memorabilia", "Health & Beauty")
-        CheckHelper.validateText("US Jessup Eyeshadow Palette Nude Makeup Neutral Shimmer Matte Beauty 12 Colors")
         StorePage.selectItem(1)
 
         ItemPage.closeMessageError()
 
-        CheckHelper.validateText("US Jessup Eyeshadow Palette Nude Makeup Neutral Shimmer Matte Beauty 12 Colors")
-        CheckHelper.validateText("14.5")
         ItemPage.addToCart()
         Espresso.pressBack()
         Espresso.pressBack()
         Thread.sleep(2000)
         CategoriesPage.selectCategorieByName("Baby", "Baby")
-        CheckHelper.validateText("halal 613551564564")
         StorePage.selectItem(1)
+
         ItemPage.closeMessageError()
-        CheckHelper.validateText("halal 613551564564")
-        CheckHelper.validateText("259.99")
+
         ItemPage.addToCart()
         ItemPage.addToCart()
         TabMenuPage.clickAccountTab()
@@ -91,7 +86,6 @@ class OrderUITest {
         CartPage.checkout()
         CheckoutPage.insertCreditCard()
         CheckHelper.validateText("Total sum:")
-        CheckHelper.validateText("$274,49")
         Espresso.pressBack()
         CheckoutPage.doOrder()
     }
